@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #010001;
+    padding: 0 2rem 0 2rem;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0 3rem 0;
+
+    h1 {
+        color: #34FF6D;
+        font-size: 40px;
+        font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    p, li {
+        color: #34FF6D;
+        font-size: 18px;
+        font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    img {
+        max-width: 20rem;
+    }
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+        height: 5rem;
+        width: 15rem;
+        border-radius: 15px;
+        background-color: #26252A;
+        border: 2px solid #fff;
+        color: #fff;
+        font-family: 'Pixelify Sans', sans-serif;
+    }
+}
+
+.hidden {
+    display: none;
+}

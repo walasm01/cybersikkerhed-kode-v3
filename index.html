@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datasikkerhed</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--Start-siden-->
+    <section id="starting-slide">
+        <div class="text-group">
+            <h1>Datasikkerhed</h1>
+        </div>
+        <div class="btn-group">
+            <button id="start-btn">Start</button>
+        </div>
+    </section>
+
+    <!--1. SCENARIE MobilePay phishing ------------------------------------------->
+    <section class="hidden" id="scenario1">
+        <div class="text-group">
+            <p>Du har modtaget denne besked:</p>
+            <img src="img/mobilepay-phishing-besked.png" alt="#">
+            <p>Hvad gør du?</p>
+        </div>
+        <div class="btn-group" id="btns1">
+            <button>Jeg ignorerer beskeden, og fotsætter med min dag</button>
+            <button>Jeg tjekker på MobilePay-appen for at se om jeg har fået nogle beskeder</button>
+            <button>Jeg ønsker ikke, at min konto bliver lukket, så jeg klikker på linket</button>
+        </div>
+    </section>
+
+    <!--2. SCENARIE Postnord Legitim
+    ------------------------------------------>
+    <section class="hidden" id="scenario2">
+        <div class="text-group">
+            <p>Du har modtaget denne besked:</p>
+            <img src="img/postnord-legitim-besked.png" alt="#">
+            <p>Du husker, at du har bestilt en mikroovn fra POWER. Du ønsker at spore pakken.</p>
+            <p>Hvad gør du?</p>
+        </div>
+        <div class="btn-group" id="btns2">
+            <button>Jeg stoler ikke på beskeden og ignorerer den</button>
+            <button>Jeg klikker på linket for at spore pakken</button>
+            <button>Jeg finder PostNords hjemmeside, og sporer pakken derfra</button>
+        </div>
+    </section>
+
+    <!--3. SCENARIE Indtast oplysninger -------------------------------------------->
+    <section class="hidden" id="scenario3">
+        <div class="text-group">
+            <p>Du klikkede på linket. Et vindue åbner og beder dig indtaste følgende oplysninger:</p>
+            <ul>
+                <li>Fulde navn</li>
+                <li>Adresse</li>
+                <li>E-mail</li>
+                <li>CPR-nummer</li>
+                <li>Bankoplysninger</li>
+            </ul>
+            <p>Hvad gør du?</p>
+        </div>
+        <div class="btn-group" id="btns3">
+            <button>Jeg går ud af linket, tilbage til beskeden</button>
+            <button>Jeg indtaster de påkrævede oplysninger</button>
+        </div>
+    </section>
+
+    <!--4. SCENARIE Postnord phishing -------------------------------------------->
+    <section class="hidden" id="scenario4">
+        <div class="text-group">
+            <p>Du har modtaget denne besked:</p>
+            <img src="img/postnord-phishing-besked.png" alt="#">
+            <p>Hvad gør du?</p>
+        </div>
+        <div class="btn-group" id="btns4">
+            <button>Jeg ignorerer beskeden</button>
+            <button>Jeg vil gerne have min pakke. Jeg klikker på linket</button>
+        </div>
+    </section>
+
+    <!--FEEDBACK-->
+    <section class="hidden" id="feedback-slide">
+        <div class="text-group">
+            <p></p>
+        </div>
+        <div class="btn-group">
+            <button id="continue-btn">Fortsæt</button>
+        </div>
+    </section>
+
+    <!--SLUTNINGER-->
+    <section class="hidden" id="ending-slide">
+        <div class="text-group">
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="btn-group">
+            <button id="again-btn">Prøv Igen</button>
+        </div>
+    </section>
+</body>
