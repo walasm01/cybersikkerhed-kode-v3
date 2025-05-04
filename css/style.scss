@@ -60,11 +60,7 @@ body {
     display: none;
 }
 
-#yellow-ending-slide {
-
-    p, h1 {
-        color: #FFE17E;
-    }
+.ending-slide {
 
     img {
         position: absolute;
@@ -73,5 +69,27 @@ body {
         top: 0;
         right: 0;
         max-width: 10rem;
+    }
+}
+
+#yellow-ending {
+    p, h1 {
+        color: #FFE17E;
+    }
+}
+#green-ending {
+    p, h1 {
+        color: #34FF6D;
+    }
+}
+#red-ending {
+    p, h1 {
+        color: #FE2828;
+    }
+}
+
+#scenario5 {
+    h1, p {
+        color:#FE2828;
     }
 }
