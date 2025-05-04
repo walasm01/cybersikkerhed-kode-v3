@@ -59,3 +59,19 @@ body {
 .hidden {
     display: none;
 }
+
+#yellow-ending-slide {
+
+    p, h1 {
+        color: #FFE17E;
+    }
+
+    img {
+        position: absolute;
+        z-index: -1;
+        opacity: 0.3;
+        top: 0;
+        right: 0;
+        max-width: 10rem;
+    }
+}
