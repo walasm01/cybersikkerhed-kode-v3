@@ -5,7 +5,6 @@
 
 body {
   background-color: #010001;
-  padding: 0 2rem 0 2rem;
 }
 
 .text-group {
@@ -13,8 +12,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 800px;
+  justify-self: center;
   gap: 1rem;
-  margin: 3rem 0 3rem 0;
+  margin: 3rem 2rem 3rem 2rem;
 }
 .text-group h1 {
   color: #34FF6D;
@@ -23,6 +24,7 @@ body {
 }
 .text-group ul {
   list-style-type: none;
+  text-align: center;
   padding: 0;
 }
 .text-group p, .text-group li {
@@ -31,7 +33,7 @@ body {
   font-family: "Pixelify Sans", sans-serif;
 }
 .text-group img {
-  max-width: 20rem;
+  width: 17rem;
 }
 
 .btn-group {
@@ -56,12 +58,10 @@ body {
 }
 
 .ending-slide img {
-  position: absolute;
+  width: 8rem;
+  opacity: 0.5;
+  bottom: 0;
   z-index: -1;
-  opacity: 0.3;
-  top: 0;
-  right: 0;
-  max-width: 10rem;
 }
 
 #yellow-ending p, #yellow-ending h1 {
@@ -72,10 +72,37 @@ body {
   color: #34FF6D;
 }
 
-#red-ending p, #red-ending h1 {
+#red-ending p, #red-ending h1, #scenario5 p, #scenario5 h1 {
   color: #FE2828;
 }
 
-#scenario5 h1, #scenario5 p {
-  color: #FE2828;
+@media screen and (min-width: 800px) {
+  .text-group h1 {
+    font-size: 60px;
+  }
+  .text-group p, .text-group li {
+    font-size: 22px;
+  }
+  .text-group img {
+    width: 25rem;
+  }
+  .btn-group {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .text-group h1 {
+    font-size: 80px;
+  }
+  .text-group p, .text-group li {
+    font-size: 26px;
+  }
+  .text-group img {
+    width: 30rem;
+  }
+  .btn-group button {
+    height: 7.5rem;
+    width: 22.5rem;
+    font-size: 22px;
+  }
 }/*# sourceMappingURL=style.css.map */
