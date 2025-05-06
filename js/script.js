@@ -39,6 +39,7 @@ startBtn.onclick = function() {
     console.log('Du starter spillet');
     scenario1.classList.remove('hidden');
     startingSlide.classList.add('hidden');
+    localStorage.clear();
 };
 
 
@@ -48,6 +49,9 @@ startBtn.onclick = function() {
 
 // 1. scenarie - Knap 1 -----------------------------------------
 btns1[0].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('MobilePay', 'Ignorer');
 
     // Hvis du klikker på knap 3 i første scenarie, får du denne feedback
     if (linkClick >= 1) {
@@ -86,6 +90,10 @@ btns1[0].onclick = function() {
 
 // 1. scenarie - Knap 2 -----------------------------------------
 btns1[1].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('MobilePay', 'Tjek MobilePay');
+
     showFeedback();
     console.log('Du tjekker for beskeder på MobilePay-appen');
     feedbackText.innerText = 'Du er gået ind på MobilePay-appen.\n\n Du har ingen notifikationer, der fortæller dig, at du skal angive oplysninger.';
@@ -101,6 +109,10 @@ btns1[1].onclick = function() {
 
 // 1. scenarie - Knap 3 -------------------------------------------
 btns1[2].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('MobilePay', 'Klik link');
+
     // Knap 3 fører dig direkte til scenarie 3.
     showScenario3();
     console.log('Du trykker på linket i beskeden');
@@ -114,6 +126,10 @@ btns1[2].onclick = function() {
 
 // 2. scenarie - Knap 1 -----------------------------------------
 btns2[0].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('PostNord', 'Ignorer');
+
     showFeedback();
     console.log('Du stoler ikke på beskeden, og du ignorerer den');
     feedbackText.innerText = 'Beskeden og linket var begge legitime.\n\n Når beskeden oplyser sporingsnummer og afsender (og afsenderen stemmer overens med, hvem du har bestilt fra), kan du godt regne med, at beskeden er legitim.\n\n Linket har også den rette URL, som fører til PostNords hjemmeside.\n\n Det er godt du er kritisk, men du fik ikke sporet pakken, som du ville. :[';
@@ -125,6 +141,10 @@ btns2[0].onclick = function() {
 
 // 2. scenarie - Knap 2 -------------------------------------------
 btns2[1].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('PostNord', 'Klik link');
+
     showFeedback();
     console.log('Du sporer pakken via linket');
     feedbackText.innerText = 'Beskeden og linket var begge legitime.\n\n Når beskeden oplyser sporingsnummer og afsender (og afsenderen stemmer overens med, hvem du har bestilt fra), kan du godt regne med, at beskeden er legitim.\n\n Linket har også den rette URL, som fører til PostNords hjemmeside.\n\n Du trykkede på det legitime link, som førte dig direkte til sporing af din pakke på PostNords hjemmeside. Ville du være 100% sikker, havde det rette valg været at gå på PostNords hjemmeside via din browser og indtaste sporingsnummeret manuelt. Det tager længere tid, men det er mere sikkert, da man aldrig burde trykke  på uopfordrede links.';
@@ -135,6 +155,10 @@ btns2[1].onclick = function() {
 
 // 2. scenarie - Knap 3 ----------------------------------------
 btns2[2].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('PostNord', 'Gå på hjemmeside');
+
     showFeedback();
     console.log('Du sporer pakken via PostNords hjemmeside');
     feedbackText.innerText = 'Beskeden og linket var begge legitime.\n\n Når beskeden oplyser sporingsnummer og afsender (og afsenderen stemmer overens med, hvem du har bestilt fra), kan du godt regne med, at beskeden er legitim.\n\n Linket har også den rette URL, som fører til PostNords hjemmeside.\n\n Du valgte, at gå ind på PostNords hjemmeside via din browser og indtaste sporingsnummeret manuelt.\n\n Du valgte den rute, der tog længst tid, men også den mest sikre.\n\n Godt klaret! :]';
@@ -150,6 +174,10 @@ btns2[2].onclick = function() {
 
 // 3. scenarie - Knap 1 -----------------------------------------
 btns3[0].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('Indtast oplysninger', 'Tilbage til beskeden');
+
     // Tryk på knap 3 i tredje scenarie, og du føres tilbage til første scenarie (uden knap 1 og 2)
     showScenario1();
     console.log('Du går ud af linket, tilbage til beskeden');
@@ -159,6 +187,10 @@ btns3[0].onclick = function() {
 
 // 3. scenarie - Knap 2 -----------------------------------------
 btns3[1].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('Indtast oplysninger', 'Indtast');
+
     console.log('Du indtaster de påkrævede oplysninger - GAME OVER');
     scenario3.classList.add('hidden');
     redEnding.classList.remove('hidden');
@@ -177,6 +209,9 @@ btns3[1].onclick = function() {
 
 // 4. scenarie - Knap 1 ------------------------------------------
 btns4[0].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('PostNord', 'Ignorer');
 
     // Hvis du har været på scenarie 5, og du derefter klikker på knap 1 i fjerde scenarie, så får du denne feedback
     if (linkClick >= 2) {
@@ -200,6 +235,10 @@ btns4[0].onclick = function() {
 
 // 4. scenarie - Knap 2 ------------------------------------------
 btns4[1].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('PostNord', 'Klik link');
+
     // Denne knap fører direkte til femte scenarie
     showScenario5();
     console.log('Du trykker på linket i beskeden');
@@ -213,6 +252,10 @@ btns4[1].onclick = function() {
 
 // 5. scenarie - Knap 1 ------------------------------------------
 btns5[0].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('Advarsel', 'Tilbage til beskeden');
+
     // Denne knap fører dig tilbage til fjerde scenarie (uden knap 2)
     showScenario4();
     console.log('Du går ud af linket, tilbage til beskeden');
@@ -221,6 +264,10 @@ btns5[0].onclick = function() {
 
 // 5. scenarie - Knap 2 --------------------------------------------
 btns5[1].onclick = function() {
+
+    // localStorage
+    localStorage.setItem('Advarsel', 'Installér software');
+
     console.log('Du installerer softwaren - GAME OVER');
     scenario5.classList.add('hidden');
     redEnding.classList.remove('hidden');
