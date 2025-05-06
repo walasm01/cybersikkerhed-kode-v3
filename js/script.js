@@ -49,24 +49,32 @@ startBtn.onclick = function() {
 
 // 1. scenarie - Knap 1 -----------------------------------------
 btns1[0].onclick = function() {
-
-    // localStorage
-    localStorage.setItem('MobilePay', 'Ignorer');
-
     // Hvis du klikker på knap 3 i første scenarie, får du denne feedback
     if (linkClick >= 1) {
+
+        // localStorage
+        localStorage.setItem('MobilePay efter link klik', 'Ignorer');
+
         showFeedback();
         console.log('Du har trykket på et uopfordret link');
         feedbackText.innerText = 'Du klikkede på et farligt link. Selvom du ikke har videregivet dine oplysninger, burde du som hovedregel aldrig klikke på uopfordrede links!\n\n MobilePay ville aldrig sende dig en besked med et link for at bekræfte dine oplysninger.\n\n Hvis du kigger på URL\'en, er det også tydeligt, at det ikke er MobilePays hjemmeside.';
 
     // Hvis du klikker på knap 1 med det samme i første scenarie, får du denne feedback
     } else if (correctRoute === false) {
+
+        // localStorage
+        localStorage.setItem('MobilePay', 'Ignorer');
+
         showFeedback();
         console.log('Du ignorerer beskeden med det samme');
         feedbackText.innerText = 'Beskeden var et forsøg på phishing, og du ignorerede den. :]\n\n Du har dog ikke sikret dig, om MobilePay faktisk skulle bruge dine oplysninger, hvilket er hensynsløst. :[\n\n Det rigtige valg havde været at tjekke om du havde fået nogle krav på oplysninger på MobilePay-appen.';
 
     // Hvis du klikker på knap 1 EFTER du har klikket på knap 2 i første scenarie, får du denne feedback
     } else {
+
+        // localStorage
+        localStorage.setItem('MobilePay efter tjek på app', 'Ignorer');
+
         showFeedback();
         console.log('Du ignorerer beskeden, efter du har tjekket MobilePay-appen for beskeder');
         feedbackText.innerText = 'Du har sikret dig at MobilePay ikke gjorde krav på oplysninger inde på appen.\n\n MobilePay ville aldrig opkræve oplysninger fra dig via et link på en SMS.\n\n Du kan derfor konkludere, at beskeden var et forsøg på phishing, altså fup.\n\n Godt klaret! :]'
@@ -157,7 +165,7 @@ btns2[1].onclick = function() {
 btns2[2].onclick = function() {
 
     // localStorage
-    localStorage.setItem('PostNord', 'Gå på hjemmeside');
+    localStorage.setItem('PostNord', 'Gå til hjemmeside');
 
     showFeedback();
     console.log('Du sporer pakken via PostNords hjemmeside');
@@ -189,7 +197,7 @@ btns3[0].onclick = function() {
 btns3[1].onclick = function() {
 
     // localStorage
-    localStorage.setItem('Indtast oplysninger', 'Indtast');
+    localStorage.setItem('Indtast oplysninger', 'Indtast - GAME OVER');
 
     console.log('Du indtaster de påkrævede oplysninger - GAME OVER');
     scenario3.classList.add('hidden');
@@ -209,12 +217,12 @@ btns3[1].onclick = function() {
 
 // 4. scenarie - Knap 1 ------------------------------------------
 btns4[0].onclick = function() {
-
-    // localStorage
-    localStorage.setItem('PostNord', 'Ignorer');
-
     // Hvis du har været på scenarie 5, og du derefter klikker på knap 1 i fjerde scenarie, så får du denne feedback
     if (linkClick >= 2) {
+
+        // localStorage
+        localStorage.setItem('PostNord efter link klik', 'Ignorer');
+
         showFeedback();
         console.log('Du har trykket på endnu et uopfordret link...')
         feedbackText.innerText = 'Du klikkede på et farligt link. Selvom du ikke gjorde hvad der stod, burde du som hovedregel aldrig klikke på uopfordrede links!\n\n “phisheren” gav dig en deadline på 12 timer for at gøre dig panisk, hvilket er et af tegnene på, at det er phishing.\n\n Hvis du kigger på URL\'en, er det også tydeligt, at det ikke er PostNords hjemmeside.';
@@ -224,6 +232,10 @@ btns4[0].onclick = function() {
 
     // Hvis du klikker på knap 1 i fjerde scenarie med det samme, får du denne feedback
     } else {
+
+        // localStorage
+        localStorage.setItem('PostNord', 'Ignorer');
+
         showFeedback();
         console.log('Du ignorerer beskeden')
         feedbackText.innerText = 'Beskeden var endnu et forsøg på at snyde dig, men du lod være med at trykke på linket.\n\n Når du får en besked fra PostNord, og der hverken står ordre/sporingsnummer eller hvem pakken er fra, så er det højst sandsynligt phishing. :]\n\n Hvis du kigger på URL\'en, er det også tydeligt, at det ikke er PostNords hjemmeside.'
@@ -266,7 +278,7 @@ btns5[0].onclick = function() {
 btns5[1].onclick = function() {
 
     // localStorage
-    localStorage.setItem('Advarsel', 'Installér software');
+    localStorage.setItem('Advarsel', 'Installér software - GAME OVER');
 
     console.log('Du installerer softwaren - GAME OVER');
     scenario5.classList.add('hidden');
@@ -287,6 +299,10 @@ function endings () {
     
     // Hvis du har trykket på 1 farligt link, får du denne slutning
     if (linkClick == 1) {
+
+        // localStorage
+        localStorage.setItem('Slutning', 'Du har trykket på 1 ud af 2 farlige links');
+
         console.log('Du har klikket på 1 ud af 2 farlige links');
         feedbackSlide.classList.add('hidden');
         yellowEnding.classList.remove('hidden');
@@ -299,6 +315,10 @@ function endings () {
 
     // Hvis du har trykket på 2 farlige links, får du denne slutning
     } else if (linkClick >= 2) {
+
+        // localStorage
+        localStorage.setItem('Slutning', 'Du har trykket på 2 ud af 2 farlige links');
+
         console.log('Du har klikket på 2 ud af 2 farlige links');
         feedbackSlide.classList.add('hidden');
         yellowEnding.classList.remove('hidden');
@@ -311,6 +331,10 @@ function endings () {
 
     // Hvis du ikke har trykket på nogle farlige links OG du har valgt den "rigtige" rute, får du denne slutning
     } else if (correctRoute) {
+
+        // localStorage
+        localStorage.setItem('Slutning', 'Du har gjort det helt rigtige');
+
         console.log('Du gjorde det helt rigtige :]');
         feedbackSlide.classList.add('hidden');
         greenEnding.classList.remove('hidden');
@@ -323,6 +347,10 @@ function endings () {
     
     // Hvis du ikke har trykket på nogle farlige links, men du har ikke valgt den "rigtige" rute, får du denne slutning
     } else {
+
+        // localStorage
+        localStorage.setItem('Slutning', 'Din kritiske sans misviste dig');
+
         console.log('Din kritiske sans misviste dig');
         feedbackSlide.classList.add('hidden');
         yellowEnding.classList.remove('hidden');
