@@ -89,6 +89,9 @@ body {
   .btn-group {
     flex-direction: row;
   }
+  .ending-slide img {
+    width: 12rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .text-group h1 {
@@ -104,5 +107,8 @@ body {
     height: 7.5rem;
     width: 22.5rem;
     font-size: 22px;
+  }
+  .ending-slide img {
+    width: 16rem;
   }
 }/*# sourceMappingURL=style.css.map */

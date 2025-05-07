@@ -27,6 +27,8 @@ const btns4 = document.querySelectorAll('#btns4 button');
 const scenario5 = document.querySelector('#scenario5');
 const btns5 = document.querySelectorAll('#btns5 button');
 
+const scenarioAll = document.querySelectorAll('.scenario');
+
 // Parametre, der kan ændre udfald
 let correctRoute = false;
 let linkClick = 0;
@@ -37,7 +39,7 @@ let linkClick = 0;
 // Start spillet ----------------------------------------------
 startBtn.onclick = function() {
     console.log('Du starter spillet');
-    scenario1.classList.remove('hidden');
+    showScenario1();
     startingSlide.classList.add('hidden');
     localStorage.clear();
 };
@@ -48,7 +50,7 @@ startBtn.onclick = function() {
 // Knapper for 1. scenarie - MobilePay phishing -----------------
 
 // 1. scenarie - Knap 1 -----------------------------------------
-btns1[0].onclick = function() {
+btns1[0].onclick = () => {
     // Hvis du klikker på knap 3 i første scenarie, får du denne feedback
     if (linkClick >= 1) {
 
@@ -81,7 +83,7 @@ btns1[0].onclick = function() {
     };
 
     // Når feedback vises, bruges nedenstående funktion for "fortsæt"-knappen.
-    continueBtn.onclick = function() {
+    continueBtn.onclick = () => {
 
         // Hvis du klikkede på knap 3 i første scenarie, så kommer du til 4. scenarie
         if (linkClick >= 1) {
@@ -97,7 +99,7 @@ btns1[0].onclick = function() {
 };
 
 // 1. scenarie - Knap 2 -----------------------------------------
-btns1[1].onclick = function() {
+btns1[1].onclick = () => {
 
     // localStorage
     localStorage.setItem('MobilePay', 'Tjek MobilePay');
@@ -108,7 +110,7 @@ btns1[1].onclick = function() {
     correctRoute = true; // Da dette er den "rigtige" rute, ændres correctRoute parameteren. Dette har betydning for, hvilken slutning du får
 
     // Efter du har klikket på knap 2 i første scenarie, får du ovenstående feedback, og "fortsæt"-knappen fører dig tilbage til første scenarie (uden knap 2)
-    continueBtn.onclick = function() {
+    continueBtn.onclick = () => {
         showScenario1();
         console.log('Du har tjekket MobilePay-appen, og du går tilbage til beskeden');
         btns1[1].classList.add('hidden');
@@ -116,7 +118,7 @@ btns1[1].onclick = function() {
 };
 
 // 1. scenarie - Knap 3 -------------------------------------------
-btns1[2].onclick = function() {
+btns1[2].onclick = () => {
 
     // localStorage
     localStorage.setItem('MobilePay', 'Klik link');
@@ -133,7 +135,7 @@ btns1[2].onclick = function() {
 // Knapper for 2. scenarie - PostNord Legitim ------------------
 
 // 2. scenarie - Knap 1 -----------------------------------------
-btns2[0].onclick = function() {
+btns2[0].onclick = () => {
 
     // localStorage
     localStorage.setItem('PostNord', 'Ignorer');
@@ -144,11 +146,11 @@ btns2[0].onclick = function() {
     correctRoute = false; // Klikket på knap 1 i andet scenarie, "ødelægger" den "rigtige" rute. Derfor ændres parameteren til false.
 
     // Når ovenstående feedback vises, giver "fortsæt"-knappen dig en bestemt slutning. Hvilken slutning du får afgøres i endings()-funktionen
-    continueBtn.onclick = function() {endings()};
+    continueBtn.onclick = () => {endings()};
 };
 
 // 2. scenarie - Knap 2 -------------------------------------------
-btns2[1].onclick = function() {
+btns2[1].onclick = () => {
 
     // localStorage
     localStorage.setItem('PostNord', 'Klik link');
@@ -158,11 +160,11 @@ btns2[1].onclick = function() {
     feedbackText.innerText = 'Beskeden og linket var begge legitime.\n\n Når beskeden oplyser sporingsnummer og afsender (og afsenderen stemmer overens med, hvem du har bestilt fra), kan du godt regne med, at beskeden er legitim.\n\n Linket har også den rette URL, som fører til PostNords hjemmeside.\n\n Du trykkede på det legitime link, som førte dig direkte til sporing af din pakke på PostNords hjemmeside. Ville du være 100% sikker, havde det rette valg været at gå på PostNords hjemmeside via din browser og indtaste sporingsnummeret manuelt. Det tager længere tid, men det er mere sikkert, da man aldrig burde trykke  på uopfordrede links.';
 
     // Når ovenstående feedback vises, giver "fortsæt"-knappen dig en bestemt slutning. Hvilken slutning du får afgøres i endings()-funktionen
-    continueBtn.onclick = function() {endings()};
+    continueBtn.onclick = () => {endings()};
 };
 
 // 2. scenarie - Knap 3 ----------------------------------------
-btns2[2].onclick = function() {
+btns2[2].onclick = () => {
 
     // localStorage
     localStorage.setItem('PostNord', 'Gå til hjemmeside');
@@ -172,7 +174,7 @@ btns2[2].onclick = function() {
     feedbackText.innerText = 'Beskeden og linket var begge legitime.\n\n Når beskeden oplyser sporingsnummer og afsender (og afsenderen stemmer overens med, hvem du har bestilt fra), kan du godt regne med, at beskeden er legitim.\n\n Linket har også den rette URL, som fører til PostNords hjemmeside.\n\n Du valgte, at gå ind på PostNords hjemmeside via din browser og indtaste sporingsnummeret manuelt.\n\n Du valgte den rute, der tog længst tid, men også den mest sikre.\n\n Godt klaret! :]';
 
     // Når ovenstående feedback vises, giver "fortsæt"-knappen dig en bestemt slutning. Hvilken slutning du får afgøres i endings()-funktionen
-    continueBtn.onclick = function() {endings()};
+    continueBtn.onclick = () => {endings()};
 };
 
 
@@ -181,7 +183,7 @@ btns2[2].onclick = function() {
 // Knapper for 3. scenarie - Indtast oplysninger ----------------
 
 // 3. scenarie - Knap 1 -----------------------------------------
-btns3[0].onclick = function() {
+btns3[0].onclick = () => {
 
     // localStorage
     localStorage.setItem('Indtast oplysninger', 'Tilbage til beskeden');
@@ -194,7 +196,7 @@ btns3[0].onclick = function() {
 };
 
 // 3. scenarie - Knap 2 -----------------------------------------
-btns3[1].onclick = function() {
+btns3[1].onclick = () => {
 
     // localStorage
     localStorage.setItem('Indtast oplysninger', 'Indtast - GAME OVER');
@@ -206,7 +208,7 @@ btns3[1].onclick = function() {
 
     // Når du trykker på knap 2 i tredje scenarie, får du en "game over"-slutning, som har en "prøv igen"-knap. Denne knap refresher siden, så man kan spille spillet igen.
     endingBtn.forEach(btn => {
-        btn.onclick = function() {location.reload()};
+        btn.onclick = () => {location.reload()};
     });
 };
 
@@ -216,7 +218,7 @@ btns3[1].onclick = function() {
 // Knapper for 4. scenarie - PostNord phishing -------------------
 
 // 4. scenarie - Knap 1 ------------------------------------------
-btns4[0].onclick = function() {
+btns4[0].onclick = () => {
     // Hvis du har været på scenarie 5, og du derefter klikker på knap 1 i fjerde scenarie, så får du denne feedback
     if (linkClick >= 2) {
 
@@ -228,7 +230,7 @@ btns4[0].onclick = function() {
         feedbackText.innerText = 'Du klikkede på et farligt link. Selvom du ikke gjorde hvad der stod, burde du som hovedregel aldrig klikke på uopfordrede links!\n\n “phisheren” gav dig en deadline på 12 timer for at gøre dig panisk, hvilket er et af tegnene på, at det er phishing.\n\n Hvis du kigger på URL\'en, er det også tydeligt, at det ikke er PostNords hjemmeside.';
 
         // Efter du er blevet vist feedback, fører "fortsæt"-knappen dig til en slutning. Hvilken slutning du får, bestemmes i endings()-funktionen
-        continueBtn.onclick = function() {endings()};
+        continueBtn.onclick = () => {endings()};
 
     // Hvis du klikker på knap 1 i fjerde scenarie med det samme, får du denne feedback
     } else {
@@ -241,12 +243,12 @@ btns4[0].onclick = function() {
         feedbackText.innerText = 'Beskeden var endnu et forsøg på at snyde dig, men du lod være med at trykke på linket.\n\n Når du får en besked fra PostNord, og der hverken står ordre/sporingsnummer eller hvem pakken er fra, så er det højst sandsynligt phishing. :]\n\n Hvis du kigger på URL\'en, er det også tydeligt, at det ikke er PostNords hjemmeside.'
 
         // Efter du er blevet vist feedback, fører "fortsæt"-knappen dig til en slutning. Hvilken slutning du får, bestemmes i endings()-funktionen
-        continueBtn.onclick = function() {endings()};
+        continueBtn.onclick = () => {endings()};
     };
 };
 
 // 4. scenarie - Knap 2 ------------------------------------------
-btns4[1].onclick = function() {
+btns4[1].onclick = () => {
 
     // localStorage
     localStorage.setItem('PostNord', 'Klik link');
@@ -263,7 +265,7 @@ btns4[1].onclick = function() {
 // Knapper for 5. scenarie - AVG Cleaning -----------------------
 
 // 5. scenarie - Knap 1 ------------------------------------------
-btns5[0].onclick = function() {
+btns5[0].onclick = () => {
 
     // localStorage
     localStorage.setItem('Advarsel', 'Tilbage til beskeden');
@@ -275,7 +277,7 @@ btns5[0].onclick = function() {
 };
 
 // 5. scenarie - Knap 2 --------------------------------------------
-btns5[1].onclick = function() {
+btns5[1].onclick = () => {
 
     // localStorage
     localStorage.setItem('Advarsel', 'Installér software - GAME OVER');
@@ -287,7 +289,7 @@ btns5[1].onclick = function() {
 
     // Når du trykker på knap 2 i femte scenarie, får du en "game over"-slutning, som har en "prøv igen"-knap. Denne knap refresher siden, så man kan spille spillet igen.
     endingBtn.forEach(btn => {
-        btn.onclick = function() {location.reload()};
+        btn.onclick = () => {location.reload()};
     });
 };
 
@@ -310,7 +312,7 @@ function endings () {
 
         // Denne knap refresher siden, så du kan spille spillet igen
         endingBtn.forEach(btn => {
-            btn.onclick = function() {location.reload()};
+            btn.onclick = () => {location.reload()};
         });
 
     // Hvis du har trykket på 2 farlige links, får du denne slutning
@@ -326,7 +328,7 @@ function endings () {
 
         // Denne knap refresher siden, så du kan spille spillet igen
         endingBtn.forEach(btn => {
-            btn.onclick = function() {location.reload()};
+            btn.onclick = () => {location.reload()};
         });
 
     // Hvis du ikke har trykket på nogle farlige links OG du har valgt den "rigtige" rute, får du denne slutning
@@ -342,7 +344,7 @@ function endings () {
 
         // Denne knap refresher siden, så du kan spille spillet igen
         endingBtn.forEach(btn => {
-            btn.onclick = function() {location.reload()};
+            btn.onclick = () => {location.reload()};
         });
     
     // Hvis du ikke har trykket på nogle farlige links, men du har ikke valgt den "rigtige" rute, får du denne slutning
@@ -358,7 +360,7 @@ function endings () {
 
         // Denne knap refresher siden, så du kan spille spillet igen
         endingBtn.forEach(btn => {
-            btn.onclick = function() {location.reload()};
+            btn.onclick = () => {location.reload()};
         });
     };
 };
@@ -368,50 +370,38 @@ function endings () {
 
 // Disse funktioner er definerede, så de kan kaldes på for at vise forskellige scenarier og feedback.
 function showScenario1 () {
+    scenarioAll.forEach(scenario => {
+        scenario.classList.add('hidden');
+    });
     scenario1.classList.remove('hidden');
-    scenario2.classList.add('hidden');
-    scenario3.classList.add('hidden');
-    scenario4.classList.add('hidden');
-    scenario5.classList.add('hidden');
-    feedbackSlide.classList.add('hidden');
 };
 function showScenario2 () {
-    scenario1.classList.add('hidden');
+    scenarioAll.forEach(scenario => {
+        scenario.classList.add('hidden');
+    });
     scenario2.classList.remove('hidden');
-    scenario3.classList.add('hidden');
-    scenario4.classList.add('hidden');
-    scenario5.classList.add('hidden');
-    feedbackSlide.classList.add('hidden');
 };
 function showScenario3 () {
-    scenario1.classList.add('hidden');
-    scenario2.classList.add('hidden');
+    scenarioAll.forEach(scenario => {
+        scenario.classList.add('hidden');
+    });
     scenario3.classList.remove('hidden');
-    scenario4.classList.add('hidden');
-    scenario5.classList.add('hidden');
-    feedbackSlide.classList.add('hidden');
 };
 function showScenario4 () {
-    scenario1.classList.add('hidden');
-    scenario2.classList.add('hidden');
-    scenario3.classList.add('hidden');
+    scenarioAll.forEach(scenario => {
+        scenario.classList.add('hidden');
+    });
     scenario4.classList.remove('hidden');
-    scenario5.classList.add('hidden');
-    feedbackSlide.classList.add('hidden');
 };
 function showScenario5 () {
-    scenario1.classList.add('hidden');
-    scenario2.classList.add('hidden');
-    scenario3.classList.add('hidden');
-    scenario4.classList.add('hidden');
+    scenarioAll.forEach(scenario => {
+        scenario.classList.add('hidden');
+    });
     scenario5.classList.remove('hidden');
-    feedbackSlide.classList.add('hidden');
 };
 function showFeedback () {
-    scenario1.classList.add('hidden');
-    scenario2.classList.add('hidden');
-    scenario3.classList.add('hidden');
-    scenario4.classList.add('hidden');
-    scenario5.classList.add('hidden');
+    scenarioAll.forEach(scenario => {
+        scenario.classList.add('hidden');
+    });
     feedbackSlide.classList.remove('hidden');
 };

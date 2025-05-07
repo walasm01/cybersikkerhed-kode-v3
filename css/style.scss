@@ -3,7 +3,7 @@ $green: #34FF6D;
 $yellow: #FFE17E;
 $red: #FE2828;
 
-// styling
+// Generel styling
 * {
     margin: 0;
     box-sizing: border-box;
@@ -13,6 +13,7 @@ body {
     background-color: #010001;
 }
 
+// Styling for teksten
 .text-group {
     display: flex;
     flex-direction: column;
@@ -46,6 +47,7 @@ body {
     }
 }
 
+// Styling for knapperne
 .btn-group {
     display: flex;
     flex-direction: column;
@@ -64,10 +66,12 @@ body {
     }
 }
 
+// Elementer med class="hidden" vises ikke.
 .hidden {
     display: none;
 }
 
+// Styling for slutningerne
 .ending-slide {
 
     img {
@@ -95,7 +99,9 @@ body {
 }
 
 
-// Media Queries
+// Media Queries for responsivitet
+
+// Skærmbredde på minimum 800px
 @media screen and (min-width: 800px) {
     .text-group {
         h1 {
@@ -112,8 +118,15 @@ body {
     .btn-group {
         flex-direction: row;
     }
-}
 
+    .ending-slide {
+
+        img {
+            width: 12rem;
+        }
+    }
+}
+// Skærmbredde på minimum 1200px
 @media screen and (min-width: 1200px) {
     .text-group {
         h1 {
@@ -133,6 +146,13 @@ body {
             height: 7.5rem;
             width: 22.5rem;
             font-size: 22px;
+        }
+    }
+
+    .ending-slide {
+
+        img {
+            width: 16rem;
         }
     }
 }
