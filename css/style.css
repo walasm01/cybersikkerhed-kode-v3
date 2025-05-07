@@ -91,7 +91,7 @@ body {
     flex-direction: row;
   }
   .ending-slide img {
-    width: 12rem;
+    width: 8rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -110,6 +110,6 @@ body {
     font-size: 22px;
   }
   .ending-slide img {
-    width: 16rem;
+    width: 10rem;
   }
 }/*# sourceMappingURL=style.css.map */
