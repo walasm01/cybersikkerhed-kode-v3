@@ -2,6 +2,7 @@
 $green: #34FF6D;
 $yellow: #FFE17E;
 $red: #FE2828;
+$background: #010001;
 
 // Generel styling
 * {
@@ -10,7 +11,7 @@ $red: #FE2828;
 }
 
 body {
-    background-color: #010001;
+    background-color: $background;
 }
 
 // Styling for teksten
@@ -61,6 +62,9 @@ body {
         border: 2px solid #fff;
         color: #fff;
         font-family: 'Pixelify Sans', sans-serif;
+    }
+    button:hover {
+        background-color: $background;
     }
 }
 

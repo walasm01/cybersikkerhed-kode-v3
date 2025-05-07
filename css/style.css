@@ -53,6 +53,9 @@ body {
   color: #fff;
   font-family: "Pixelify Sans", sans-serif;
 }
+.btn-group button:hover {
+  background-color: #010001;
+}
 
 .hidden {
   display: none;
