@@ -17,20 +17,21 @@ body {
   gap: 1rem;
   margin: 3rem 2rem 3rem 2rem;
 }
-.text-group h1 {
+.text-group p, .text-group li, .text-group h1 {
   color: #34FF6D;
-  font-size: 40px;
   font-family: "Pixelify Sans", sans-serif;
+}
+.text-group h1 {
+  font-size: 35px;
+  text-align: center;
+}
+.text-group p {
+  font-size: 18px;
 }
 .text-group ul {
   list-style-type: none;
   text-align: center;
   padding: 0;
-}
-.text-group p, .text-group li {
-  color: #34FF6D;
-  font-size: 18px;
-  font-family: "Pixelify Sans", sans-serif;
 }
 .text-group img {
   width: 17rem;

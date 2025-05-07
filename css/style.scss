@@ -24,24 +24,22 @@ body {
     gap: 1rem;
     margin: 3rem 2rem 3rem 2rem;
 
-    h1 {
+    p, li, h1 {
         color: $green;
-        font-size: 40px;
         font-family: 'Pixelify Sans', sans-serif;
     }
-
+    h1 {
+        font-size: 35px;
+        text-align: center;
+    }
+    p {
+        font-size: 18px;
+    }
     ul {
         list-style-type: none;
         text-align: center;
         padding: 0;
     }
-
-    p, li {
-        color: $green;
-        font-size: 18px;
-        font-family: 'Pixelify Sans', sans-serif;
-    }
-
     img {
         width: 17rem;
     }

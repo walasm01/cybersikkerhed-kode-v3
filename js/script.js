@@ -25,7 +25,7 @@ let correctRoute = false;
 let linkClick = 0;
 
 // Start spillet ----------------------------------------------
-startBtn.onclick = function() {
+startBtn.onclick = () => {
     console.log('Du starter spillet');
     showScenario1();
     startingSlide.classList.add('hidden');
